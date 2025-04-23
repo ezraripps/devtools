@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable no-empty, @typescript-eslint/no-unused-vars */
 
 // This file contains examples of bad code that should be flagged by the linter
 
@@ -159,7 +159,9 @@ import { exec } from 'child_process'
 export function listFiles(userPath: string) {
     exec('ls ' + userPath, (err, out) => {
         // ⚠️ tainted input
-        if (err) throw err
+        if (err) {
+            throw err
+        }
         console.log(out)
     })
 }
